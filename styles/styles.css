@@ -1,0 +1,148 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            Defaults - Mobile First
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.container{
+    background-color:red;
+    width:100vw; /* 100 viewport width */
+    height:100vh; /* 100 viewport height */
+}
+
+ul{
+    background-color:purple;
+    display:flex;
+    /* justify-content: flex-end; - this will align the content to the right (or the end of the flex direction) */
+    /* justify-content:space-evenly; - or space-around or space-between will apply a slightly different layout
+    in spacing the content across the enire flexed item */
+}
+
+li{
+    /* margin:10px;  margin is space around an object - it pushes other objects away */
+    padding:10px; /* padding is space inside an object - it pushes content away from the edge */
+    border-right:2px solid black; /* border sits in between padding and margin - you always need three
+    properties: size, style, and colour */
+    background-color:grey;
+    /* to center the content, just use text-align */
+    text-align:center;
+
+    /* list items become flex items because the ul is set to display:flex */
+    flex-grow:1;
+
+    /* flex-basis:0 says to ignore the size of the content and give each item equal weight */
+    flex-basis:0;
+
+    font-size:24px;
+}
+
+/* target the last list item using a pseudo class to remove the border */
+li:last-child{
+    border:none;
+}
+
+a{
+    background-color:orange;
+    /* remove underline from links with text-decoration */
+    text-decoration:none;
+}
+
+h2{
+    font-size:32px;
+    font-weight:bold;
+    padding:10px;
+    margin-bottom:10px;
+    background-color:deepskyblue;
+}
+
+section{
+    padding:10px;
+    margin:5px 0;
+    background-color:gainsboro;
+}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            Desktop Styling
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media screen and (min-width:960px){
+    .container{
+        margin:0 auto; /* margin of 0 on the top and bottom and "automatic" on the left and right */
+        width:80%;
+        max-width:1260px;
+    }
+
+    article{
+        display:grid;
+        grid-template-columns:1fr 1fr 1fr; /* repeat(3, 1fr) */
+        /* grid-template-areas assigns a map, into which you can assign the positions of elements */
+        grid-template-areas:
+            "header header side"
+            "content content side";
+    }
+
+    h2{
+        grid-area: header;
+    }
+    section:first-of-type{
+        grid-area: content;
+    }
+    section:last-of-type{
+        grid-area: side;
+    }
+    /*h2, section:first-of-type{
+       grid-column: 1 / span 2;  start at column 1 and take up 2 columns 
+    }*/ 
+
+    /* section:last-of-type{
+        grid-column: 3;
+        grid-row: 1 / span 2; start at row 1 and span 2 rows 
+    }*/
+}

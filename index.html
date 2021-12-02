@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- links for stylesheets for fonts or icons should come before the main stylesheet
+    this will allow your main stylesheet to refer to these fonts or icons -->
+    <link href="styles/icons.css" rel="stylesheet">
+    <link href="styles/styles.css" rel="stylesheet">
+    <title>HTML Week 13 Review</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">George</a></li>
+                    <li><a href="#">Other Stuff</a></li>
+                    <!-- to use icons you need two classes on an html element: the class icon, which sets the 
+                    element as an icon container, and then the class for the specific icon to display -->
+                    <li><a href="#">Contact <i class="icon icon-zoom"></i></a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+
+            <!--
+                forms require two attributes:
+                action is where the form information will be submitted to
+                method is how that information is submitted
+                    "get" method is unencrypted
+                    "post" method is encrytped
+            -->
+            <form action="index.html" method="post">
+                <!-- labels require one attribute, "for", which needs to match the ID of the form field -->
+                <label for="fullname">Enter your name:</label>
+                <!-- form fields require two attributes: ID (to match the label) and name (which is how
+                    the information is processed on the server) -->
+                <input type="text" id="fullname" name="fullname">
+
+                <label for="info">Enter lots of info:</label>
+                <textarea id="info" name="info"></textarea>
+
+                <div>Radio buttons:</div>
+                <!-- with radio buttons, the name makes them a set - each radio button needs the same name -->
+                <label for="yes">Yes</label>
+                <input type="radio" id="yes" name="yesorno">
+                <label for="no">No</label>
+                <input type="radio" id="no" name="yesorno">
+
+                <!-- there are two types of submit buttons 
+                    input type="submit" - use the value attribute to add content
+                    button type="submit" - content goes between the tags
+                -->
+                <input type="submit" value="submit">
+                <button type="submit"><i class="icon icon-zoom"></i></button>
+            </form>
+
+
+            <article>
+                <h2>HTML Grid</h2>
+                <section>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel ipsum placerat, vestibulum ex ut, fringilla ante. Ut vestibulum ultrices ornare. Maecenas lacus magna, ultricies in efficitur at, tempor vitae augue. Maecenas non nulla et eros sagittis rutrum. Nulla a justo tempus, lobortis tellus tristique, sodales ante. Donec sollicitudin tellus sed tortor facilisis elementum. Curabitur justo magna, laoreet in dignissim sit amet, interdum id felis.</section>
+                <section>Maecenas ut tempor magna. Fusce dignissim laoreet auctor. Aenean elementum euismod iaculis. Sed diam lectus, ornare a tincidunt et, blandit ut magna. Sed ac ipsum sit amet erat eleifend varius.</section>
+            </article>
+        </main>
+    </div>
+</body>
+</html>
